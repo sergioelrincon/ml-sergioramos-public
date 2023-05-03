@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Descubriendo Gran Canaria</title>
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="stylesheet" type="text/css" href="./style/styleNuevo.css">
+</head>
+<body>
+	<header>
+		<h1>Descubriendo Gran Canaria</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="nuevo.html">Nuevo lugar que visitar</a></li>
+			<li><a href="listado.html">Lugares que no me puedo perder</a></li>
+		</ul>
+	</nav>
+    <br>
+	<main>
+        <div class="container">
+            <h1>Nuevo lugar que visitar</h1>
+            <br>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="nombre-lugar">Nombre del lugar:</label>
+                    <input type="text" id="nombre-lugar" name="nombre-lugar" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="municipio">Municipio donde se encuentra:</label>
+                    <!-- <input type="text" id="municipio" name="municipio" required> -->
+                    <select name="municipio" id="municipio">
+                        <option value="laspalmasdegc">Las Palmas de Gran Canaria</option>
+                        <option value="laspalmasdegc">Ingenio</option>
+                        <option value="laspalmasdegc">San Bargolomé de Tirajana</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="url-info">URL con más información:</label>
+                    <input type="url" id="url-info" name="url-info" required>
+                </div>
+                <div class="form-group">
+                    <label for="url-maps">URL con enlace a Google Maps:</label>
+                    <input type="url" id="url-maps" name="url-maps" required>
+                </div>
+                <div class="form-group">
+                    <label for="imagen">Imagen:</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
