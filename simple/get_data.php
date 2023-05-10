@@ -74,7 +74,7 @@ if (sizeof($arrayErrors) > 0)
 }
 else
 {
-    echo "<H2>The data is OK. We are goint to insert into the database</H2>";
+    echo "<H2>The data is OK. We are going to insert into the database</H2>";
     echo "<ul>";
     echo "<li>The name of the place is...$namePlace";
     echo "<li>The description of the place is...$descriptionPlace";
