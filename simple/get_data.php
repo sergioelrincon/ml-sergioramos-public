@@ -1,9 +1,17 @@
 <html>
+    <body>
 
-<body>
-
-
-<h1>Receiving data from the form</h1>
+    <header>
+		<h1>Descubriendo Gran Canaria</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="nuevo.html">Nuevo lugar que visitar</a></li>
+			<li><a href="listado.html">Lugares que no me puedo perder</a></li>
+		</ul>
+	</nav>
+    <main>
+        <h1>Receiving data from the form</h1>
 
 
 <?php
@@ -62,6 +70,7 @@ if (sizeof($arrayErrors) > 0)
         echo $errorMessage;
     }
     echo "</ul>";
+    echo "<a href='nuevo.html'>Try again</a>";
 }
 else
 {
@@ -73,11 +82,16 @@ else
     echo "<li>The URL with the map of the place is...$url_maps";
     echo "<li>The image name is...$image";
     echo "</ul>";
+
+    $myfile = fopen("places.csv", "a") or die("Unable to open file!");
+    $txt = "$namePlace;$descriptionPlace;$url_info;$url_maps;$image\n";
+    fwrite($myfile, $txt);
+    fclose($myfile);
 }
 
 ?>
+        </main>
 
-
-</body>
+    </body>
 
 </html>
