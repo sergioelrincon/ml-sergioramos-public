@@ -18,7 +18,7 @@
 	<nav>
 		<ul>
 			<li><a href="nuevo.html">Nuevo lugar que visitar</a></li>
-			<li><a href="listado.html">Lugares que no me puedo perder</a></li>
+			<li><a href="listado.php">Lugares que no me puedo perder</a></li>
 		</ul>
 	</nav>
     <br>
@@ -26,7 +26,7 @@
         <div class="container">
             <h1>Nuevo lugar que visitar</h1>
             <br>
-            <form action="get_data.php" method="POST">
+            <form action="get_data.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="nombre-lugar">Nombre del lugar:</label>
                     <input type="text" id="nombre-lugar" name="nombre-lugar" >
@@ -38,9 +38,9 @@
                 <div class="form-group">
                     <label for="municipio">Municipio donde se encuentra:</label>
                     <select name="municipio" id="municipio">
-                        <option value="laspalmasdegc">Las Palmas de Gran Canaria</option>
-                        <option value="laspalmasdegc">Ingenio</option>
-                        <option value="laspalmasdegc">San Bargolomé de Tirajana</option>
+                        <option value="Las Palmas de Gran Canaria">Las Palmas de Gran Canaria</option>
+                        <option value="Ingenio">Ingenio</option>
+                        <option value="San Bartolomé de Tirajana">San Bargolomé de Tirajana</option>
                     </select>
                 </div>
                 <div class="form-group">

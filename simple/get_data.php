@@ -15,6 +15,18 @@
 
 
 <?php
+
+// DEGUB CODE
+/*
+echo "<pre>";
+echo "<h1>Contenido del array _POST</h1>";
+print_r($_POST);
+
+echo "<h1>Contenido del array _FILES</h1>";
+print_r($_FILES);
+echo "</pre>";
+^*/
+
 $arrayErrors = array();
 
 // Recibimos los datos enviados a través del formulario
@@ -23,7 +35,7 @@ $descriptionPlace = $_POST["descripcion"];
 $town = $_POST["municipio"];
 $url_info = $_POST["url-info"];
 $url_maps = $_POST["url-maps"];
-$image = $_POST["imagen"];
+$image = $_FILES["imagen"]["name"];
 
 // Validamos los datos
 if ($namePlace == "") {
@@ -83,8 +95,13 @@ else
     echo "<li>The image name is...$image";
     echo "</ul>";
 
+    $fileUploadDir = "./upload";
+
+    if (!(move_uploaded_file($_FILES["imagen"]["tmp_name"], $fileUploadDir."/".$_FILES["imagen"]["name"])))
+        echo "<br>Error al subir el fichero";
+
     $myfile = fopen("places.csv", "a") or die("Unable to open file!");
-    $txt = "$namePlace;$descriptionPlace;$url_info;$url_maps;$image\n";
+    $txt = "\n$namePlace;$descriptionPlace;$town;$url_info;$url_maps;$image";
     fwrite($myfile, $txt);
     fclose($myfile);
 }
