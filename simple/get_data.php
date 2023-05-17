@@ -16,10 +16,23 @@
 
 <?php
 
+/**
+ * Validate the filed value passed by parameter
+ */
 function validateRequired($fieldValue) {
     if (empty(trim($fieldValue)))
         return false;
     else 
+        return true;
+}
+
+/**
+ * Check the size of the value passed by parameter
+ */
+function validateSize($fieldValue, $size) {
+    if (strlen(trim($fieldValue)) > $size)
+        return false;
+    else
         return true;
 }
 
@@ -64,17 +77,17 @@ if (!validateRequired($image)) {
     $arrayErrors[] = "<li>ERROR: The image field is empty";
 }
 
-if (strlen($namePlace) > 20) {
-    $arrayErrors[] = "<li>ERROR: The size of the name field greater than 20 characters";
+if (!validateSize($namePlace, 20)) {
+    $arrayErrors[] = "<li>ERROR: The size of the name field is greater than 20 characters";
 }
-if (strlen($descriptionPlace) > 100) {
-    $arrayErrors[] = "<li>ERROR: The size of the description field greater than 100 characters";
+if (!validateSize($descriptionPlace, 100)) {
+    $arrayErrors[] = "<li>ERROR: The size of the description is field greater than 100 characters";
 }
-if (strlen($url_info) > 100) {
-    $arrayErrors[] = "<li>ERROR: The size of the URL (info) field greater than 100 characters";
+if (!validateSize($url_info, 100)) {
+    $arrayErrors[] = "<li>ERROR: The size of the URL (info) is field greater than 100 characters";
 }
-if (strlen($url_maps) > 100) {
-    $arrayErrors[] = "<li>ERROR: The size of the URL (Google Maps) field greater than 100 characters";
+if (!validateSize($url_maps, 100)) {
+    $arrayErrors[] = "<li>ERROR: The size of the URL (Google Maps) isfield greater than 100 characters";
 }
 
 
