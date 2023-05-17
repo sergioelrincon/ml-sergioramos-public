@@ -16,6 +16,13 @@
 
 <?php
 
+function validateRequired($fieldValue) {
+    if (empty(trim($fieldValue)))
+        return false;
+    else 
+        return true;
+}
+
 // DEGUB CODE
 /*
 echo "<pre>";
@@ -38,22 +45,22 @@ $url_maps = $_POST["url-maps"];
 $image = $_FILES["imagen"]["name"];
 
 // Validamos los datos
-if ($namePlace == "") {
+if (!validateRequired($namePlace)) {
     $arrayErrors[] = "<li>ERROR: The name field is empty";
 }
-if ($descriptionPlace == "") {
+if (!validateRequired($descriptionPlace)) {
     $arrayErrors[] = "<li>ERROR: The description field is empty";
 }
-if ($town == "") {
+if (!validateRequired($town)) {
     $arrayErrors[] = "<li>ERROR: The town field is empty";
 }
-if ($url_info == "") {
+if (!validateRequired($url_info)) {
     $arrayErrors[] = "<li>ERROR: The URL (info) field is empty";
 }
-if ($url_maps == "") {
+if (!validateRequired($url_maps)) {
     $arrayErrors[] = "<li>ERROR: The URL (Google Maps) field is empty";
 }
-if ($image == "") {
+if (!validateRequired($image)) {
     $arrayErrors[] = "<li>ERROR: The image field is empty";
 }
 

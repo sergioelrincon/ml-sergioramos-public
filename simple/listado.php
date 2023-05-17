@@ -69,7 +69,7 @@ echo "</pre>";
                             echo "<td>$place[2]</td>";
                             echo "<td><a href='$place[3]'>$place[3]</a></td>";
                             echo "<td><a href='$place[4]'>$place[4]</a></td>";
-                            echo "<td><img src='upload/".$place[5]."' width='200px'></td>";
+                            echo "<td><a href='upload/".$place[5]."' target='_blank'><img src='upload/".$place[5]."' width='200px'></a></td>";
                             echo "</tr>";
 
                         }
