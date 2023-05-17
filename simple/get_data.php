@@ -36,6 +36,16 @@ function validateSize($fieldValue, $size) {
         return true;
 }
 
+/**
+ * Validate URL
+ */
+function validateURL($URL) {
+    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$URL))
+        return false;
+    else
+        return true;
+}
+
 // DEGUB CODE
 /*
 echo "<pre>";
@@ -89,8 +99,13 @@ if (!validateSize($url_info, 100)) {
 if (!validateSize($url_maps, 100)) {
     $arrayErrors[] = "<li>ERROR: The size of the URL (Google Maps) isfield greater than 100 characters";
 }
+if (!validateURL($url_info)) {
+    $arrayErrors[] = "<li>ERROR: The URL info format is incorrect";
+}
 
-
+if (!validateURL($url_maps)) {
+    $arrayErrors[] = "<li>ERROR: The URL (Google Maps) format is incorrect";
+}
 
 // Mostramos los diferentes campos
 if (sizeof($arrayErrors) > 0)
